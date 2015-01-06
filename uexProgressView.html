@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<title>Demo</title>
+<script type="text/javascript">
+    window.uexOnload = function() {
+		uexWidgetOne.onError = function(opCode, errorCode, errorDesc) {
+			alert(errorCode + ":" + errorDesc);
+		}
+        uexProgressView.onComplete = onComplete;
+	}
+    function openView(){
+       alert("setProgress:openView");
+       var params = "{\"x\":\"0\",\"y\":\"300\",\"w\":\"280\",\"h\":\"280\"}";
+       uexProgressView.open(params);
+    }
+    function setProgress(){
+        alert("setProgress");
+        var params = "{\"progress\":\"30\"}";
+        uexProgressView.setProgress(params);
+    }
+    function setViewStyle1(){
+        alert("uexProgressView:setViewStyle");
+        var params = "{\"type\":\"1\",\"style\":{\"normalColor\":\"#9400D3\",\"progressColor\":\"#32CD32\",\"isShowText\":\"0\",\"textSize\":\"20\"}}";
+        uexProgressView.setViewStyle(params);
+    }
+    function setViewStyle2(){
+        alert("uexProgressView:setViewStyle");
+        var params = "{\"type\":\"2\",\"style\":{\"normalColor\":\"#9400D3\",\"progressColor\":\"#FF0000\",\"borderCorlor\":\"#FF0000\"}}";
+        uexProgressView.setViewStyle(params);
+    }
+    function setViewStyle3(){
+        alert("uexProgressView:setViewStyle");
+        var params = "{\"type\":\"3\",\"style\":{\"normalColor\":\"#9400D3\",\"progressColor\":\"#F4CD32\",\"borderCorlor\":\"#3FCD32\"}}";
+        uexProgressView.setViewStyle(params);
+    }
+    function setViewStyle4(){
+        alert("uexProgressView:setViewStyle");
+      var params = "{\"type\":\"4\",\"style\":{\"normalColor\":\"#9400D3\",\"progressColor\":\"#FF0000\",\"textColor\":\"#FF0000\",\"borderCorlor\":\"#3FCD32\"}}";
+        uexProgressView.setViewStyle(params);
+    }
+    function close1(){
+        alert("uexProgressView.close");
+        uexProgressView.close();
+    }
+    function onComplete(){
+        alert(1111);
+    }
+</script>
+</head>
+
+<body>
+	<div class="tit">EUExProgressView</div>
+        <div class="conbor">
+            <div class="consj">
+                <input class="btn" type="button" value="打开" onclick="openView();"/>
+                <input class="btn" type="button" value="关闭" onclick="close1();"/>
+                <input class="btn" type="button" value="设置进度" onclick="setProgress();"/>
+                <input class="btn" type="button" value="设置进度条风格风格1" onclick="setViewStyle1();"/>
+                <input class="btn" type="button" value="设置进度条风格风格2" onclick="setViewStyle2();"/>
+                <input class="btn" type="button" value="设置进度条风格风格3" onclick="setViewStyle3();"/>
+                <input class="btn" type="button" value="设置进度条风格风格4" onclick="setViewStyle4();"/>
+                <input class="btn" type="button" value="返回" onclick="uexWindow.close();"/>
+            </div>
+        </div>
+</body>
+</html>
